@@ -983,15 +983,6 @@ module gps_baseband (clk, hw_rstn,
     endcase // case(address)
    end
 
-   // process to create a two clk wide dump_mask pulse
-   always @ (posedge clk)
-   begin
-     if (!rstn)
-        dump_mask_2 <= 0;
-     else
-        dump_mask_2 <= dump_mask;
-   end
-
    // process to reset the status register after a read
    // also create accum_int signal that is cleared after status read
    

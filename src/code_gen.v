@@ -139,14 +139,14 @@ module code_gen (clk, rstn,
   wire ca_code = g1_q ^ g2_q;
   `endif
   
-  always @ (posedge clk)
-  begin
-    if (prn_key_enable) //clear register;
-	  shft_reg <= 0;
-	else if (hc_enable) //make shifting here;
-	  shft_reg <= {shft_reg[1:0], ca_code};
-  end
-  assign srq = shft_reg;   
+  // always @ (posedge clk)
+  // begin
+  //   if (prn_key_enable) //clear register;
+	//   shft_reg <= 0;
+	// else if (hc_enable) //make shifting here;
+	//   shft_reg <= {shft_reg[1:0], ca_code};
+  // end
+  // assign srq = shft_reg;   
 
   // assign the early, prompt and late chips, one half chip apart
   assign early = srq[0];

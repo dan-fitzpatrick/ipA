@@ -82,11 +82,11 @@ module code_nco (clk, rstn, tic_enable, f_control, hc_enable, code_nco_phase);
    assign accum_carry = accum_sum[29];
 
    // latch the top 10 bits on the tic_enable
-   always @ (posedge clk)
-     begin
-	if (!rstn) code_nco_phase <= 0;
-	else if (tic_enable) code_nco_phase <= accum_reg[28:19]; // see note 1 above
-     end
+//    always @ (posedge clk)
+//      begin
+// 	if (!rstn) code_nco_phase <= 0;
+// 	else if (tic_enable) code_nco_phase <= accum_reg[28:19]; // see note 1 above
+//      end
 
    // generate the half-chip enable
    always @ (posedge clk)
